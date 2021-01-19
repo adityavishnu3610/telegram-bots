@@ -12,9 +12,9 @@ def echo(bot, update):
     film_name = film_name.replace(' ','+').lower()
     api_req = requests.get("http://www.omdbapi.com/?t="+film_name+"&apikey=YOURAPIKEY")
 
-    api_response = BeautifulSoup(api_req.content, 'html5lib')
+    api_response = BeautifulSoup(api_req.content, 'html5lib') # get api response
 
-    api_json = json.loads(api_response.text)
+    api_json = json.loads(api_response.text) 
 
     search_keyword = api_json['Title']
     year = api_json['Year']
